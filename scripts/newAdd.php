@@ -17,11 +17,36 @@ if ($count == 0){
 $query = "INSERT INTO `admissions`(`firstname`,`lastname`,`email`,`trackid`) VALUES('".$firstname."','".$lastname."','".$email."','".$track_ids."')";
 $result = mysqli_query($conn, $query) or die(mysqli_error($conn));
 if($result){
+//     $to = $email;
+//     $subject = "Thanks for registering";
+//     $txt = "You have successfully regigetred on our website\n your details are:\n
+//      Firstname:".$firstname." Lastname: ".$lastname." tracking id: ".$track_ids;
+//     $headers = "From: roqak1@gmail.com" . "\r\n" .
+//     "CC: somebodyelse@example.com";
+
+// mail($to,$subject,$txt,$headers);
+//////////////
+// $to = $email;
+// $subject = 'Thanks for registering';
+// $message = "You have successfully regigetred on our website\n your details are:\n
+// Firstname:".$firstname." Lastname: ".$lastname." tracking id: ".$track_ids; 
+// $from = 'roqak1@gmail.com';
+// mail($to, $subject, $message);
+// Sending email
+// if(mail($to, $subject, $message)){
+//     echo 'Your mail has been sent successfully.';
+// } else{
+//     echo 'Unable to send email. Please try again.';
+// }
+//////
     header('Content-type: application/json');  
-    $array = array('result' => "Registered",'message'=>"Registration Succesfull your track_id is: "+$track_ids);
+    $array = array('result' => "Registered",'message'=>"Registration Succesfull your track_id is: ".$track_ids);
     echo json_encode($array);
 }else{
-    echo "errrr";
+    // echo "errrr";
+    header('Content-type: application/json');  
+    $array = array('result' => "NRegistered",'message'=>"TOFU ");
+    echo json_encode($array);
 
 }
 }else{

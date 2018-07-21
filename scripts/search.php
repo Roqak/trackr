@@ -13,13 +13,13 @@ if ($count == 1){
 // $_SESSION['admin'] = "yes";
 $row = mysqli_fetch_assoc($result);
 header('Content-type: application/json');  
-$array = array('result' => "logged in",'firstname'=>$row['firstname'],'lastname'=>$row['lastname'],'track-id'=>$row['trackid']);
+$array = array('result' => "found",'message'=>"Application found, your tracking id is: ".$row['trackid']."and your application status is: ".$row['status']);
 echo json_encode($array);
 }else{
 // echo "Invalid Login Credentials.";
 $row = mysqli_fetch_assoc($result);
 header('Content-type: application/json');  
-$array = array('result' => "INVALID DETAILS");
+$array = array('result' => "INVALID DETAILS",'message'=>"Sorry, your appliction id is INVALID. Please try a valid ID or register");
 echo json_encode($array);
 }
 }

@@ -1,8 +1,8 @@
 
 </main>
-<footer class="page-footer" style="margin-top:2%;background-color:blue;color:black;">
+<footer class="page-footer" style="margin-top:2%;background-color:#28313d;color:white;">
           <div class="container">
-            <div class="row">
+            <!-- <div class="row">
               <div class="col l6 s12">
                 <h5 class="">Footer Content</h5>
                 <p class="">You can use rows and columns here to organize your footer content.</p>
@@ -15,10 +15,10 @@
                 </ul>
               </div>
             </div>
-          </div>
-          <div class="footer-copyright">
-            <div class="container" style="color:black;">
-            © 2014 Copyright Text
+          </div> -->
+          <div class="footer-copyright" style="background-color:#28313d;color:white;">
+            <div class="container">
+            © 2018 Copyright Text
             
             </div>
           </div>
@@ -26,8 +26,7 @@
         <script>
     $( document ).ready(function(){
         $(".dropdown-trigger").dropdown();
-    $('.modal').modal();
-
+        $('.modal').modal();
     });
     
     </script>

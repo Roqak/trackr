@@ -1,9 +1,9 @@
 <?php include "header.php"; ?>
 
+<div id="message"><ul id="message-list"></ul></div>
+<!-- <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Register</a> -->
 
-<a class="waves-effect waves-light btn modal-trigger" href="#modal1">Register</a>
-
-<div id="modal1" class="modal">
+<div id="reg-modal" class="modal">
     <div class="modal-content">
       <h4>Create New Admission</h4>
       <form action="./scripts/newAdd.php" class="reg-form" method="post" class="col s12">
@@ -41,7 +41,7 @@
         <div class="input-field col s6">
           <!-- <input id="search" type="button" class="validate">
           <label for="search">Search<i class="material-icons">search</i></label> -->
-          <button>Search<i class="material-icons">search</i></button>
+          <button class="btn">Search<i class="material-icons">search</i></button>
         </div>
       </div>
       </div>
@@ -72,7 +72,8 @@
           success: function(result){
               console.log(result);
             //   $('.modal').close();
-              $('main').prepend(result.message);
+            $('#message-list').html("");
+              $('#message-list').append("<li>"+result.message+"</li>");
             //   var toastHTML = '<span>'+result.message+'</span><button onclick='+myFunction()+' class="btn-flat toast-action">Copy</button>';
             //     M.toast({html: toastHTML});
               alert(result.message);
@@ -93,6 +94,8 @@
           data: $('.search-form').serialize(),
           success: function(result){
               console.log(result);
+              $('#message-list').html("");
+              $('#message-list').append("<li>"+result.message+"</li>");
           },
           error: function(err){
             //   alert(err);
