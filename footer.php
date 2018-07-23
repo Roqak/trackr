@@ -27,6 +27,7 @@
     $( document ).ready(function(){
         $(".dropdown-trigger").dropdown();
         $('.modal').modal();
+      // $(".button-collapse").sidenav();
     });
     
     </script>
